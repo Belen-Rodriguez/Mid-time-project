@@ -1,0 +1,468 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html{
+  font-size: 10px;
+  background-color: #F4F6FC;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+}
+  /*COLORES _____________________________________________
+  Azul oscuro: #072AC8
+  azul cian: #43D2FF
+  azul medio primaryHover: #A2D6F9
+  azul flojo: #D1EDFF
+  azul muy flojo-gris: #ECF7FF
+  Gris neutral Dark: #292E47
+  Gris neutral Medium: #6B708D
+  Gris medio flojo: #F4F6FC
+  Amarillo: #FFC600
+*/
+  
+  
+  /*TITULOS _____________________________________________*/
+h1 {
+  font-size: 7rem;
+  font-weight: 700;
+}
+h2{
+  font-size: 5rem;
+  font-weight: 700;
+}
+h3{
+  font-size: 4rem;
+  font-weight: 700;
+}
+h4{
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+h5{
+  /*Body Intro Text 24 Medium*/
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #292E47;
+}
+
+.p01{
+    /*Body Intro Text 20 Regular*/
+    font-size: 2rem;
+    font-weight: 400;
+    color: #6B708D;
+}
+.p02{
+  /*Body Intro Text 17 Regular*/
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #6B708D;
+}
+.p03{
+  /*Body Intro Text 17 Medium*/
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #6B708D;
+}
+.p04{
+  /*Body Intro Text 15 Regular*/
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.p05{
+  /*Body Intro Text 13 Regular*/
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.white{
+  color: white
+}
+.neutralDark{
+  color: #292E47
+}
+.neutralMedium{
+  color: #6B708D
+}
+.yellow{
+  color: #FFC600
+}
+.bluePrimaryHover{
+  color: #A2D6F9
+}
+@media (min-width: 480px) and (max-width: 770px){
+  h1{
+    font-size: 5.5rem;
+  }
+  h2{
+    font-size: 4rem;
+  }
+  h3{
+    font-size: 3.5rem;
+  }
+  h3{
+    font-size: 2 rem;
+  }
+}
+/*HEADER _____________________________________________*/
+
+header{
+  margin: 7rem auto 0rem auto;
+  height: 12.2rem;
+  width: 80%;
+ /*position: fixed;*/
+  display: grid;
+  grid-template-columns: 8% 40% 20%;
+  align-items: center;
+  grid-column-gap: 16%;
+}
+
+.logoImg{
+ height: 1.84rem;
+ text-align: center;
+}
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+li a{
+  width: 100%;
+  text-decoration: none;
+}
+
+.blueBtn{
+  padding: 1.7rem;
+  background-color: #072AC8;
+  color:white;
+  text-align: center;
+  text-decoration: none;
+}
+
+/*SECTION 1___HERO__________________________________________*/
+
+.section1{
+  margin: 10rem auto;
+  width: 80%;
+  height: 65rem;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  align-items: center;
+  grid-column-gap: 10%;
+}
+.card1{
+  margin: 0;
+  padding: 0;
+  width: 30%;
+  display: none;
+}
+.card2{
+  width: 30%;
+  text-align:right;
+  display: none;
+}
+.heroImg{
+  height: 100%;
+
+  z-index: 50;
+}
+.containerHeroText{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.containerHeroImg{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.transparentBtn{
+  margin-left: 1rem;
+  padding: 1.7rem;
+  color:#6B708D;
+  text-align: center;
+  text-decoration: none;
+}
+.section1 p{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 1.7rem;;
+}
+/*SECTION 2_____LOGOS PATROCINADORES________________________________________*/
+
+.section2 {
+  width: 80%;
+  margin: 7rem auto 0rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.clientLogos{
+  height: 3.2rem;
+  filter: grayscale(100%);
+  object-fit: cover;
+}
+
+@media (min-width: 480px) and (max-width: 770px){
+  .clientLogos {
+    height: 2.4rem;
+  }
+}
+
+/*SECTION 3_____RECENT PROJECTS________________________________________*/
+
+.section3 {
+  height: 56.1rem;
+  width: 80%;
+  margin: 10rem auto 0rem auto;
+
+}
+.containerImgS3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section3 article{
+  height: 44.4rem;
+  width: 34rem;
+  background-color: white;
+}
+.section3Img{
+  height: 24rem;
+  width: 34rem;
+}
+.section3 h3{
+  margin-top: 0;
+  margin-bottom: 5rem;
+  color:#292E47;
+}
+.learnMore{
+  color: #072AC8;
+  text-decoration: none;
+  margin-top: 4rem;
+}
+.containerTextS3{
+  margin-top: 2.4rem;
+  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.7rem;
+}
+
+
+/*SECTION 4______TESTIMONIAL_______________________________________*/
+
+.section4{
+  height: 62.2rem;
+  width: 90%;
+  margin: 10rem auto 0rem auto;
+  padding: 5rem;
+  background-color: #292E47;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  box-sizing: border-box;
+}
+.sticker{
+  width: 15rem;
+}
+.containerS4Text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.7rem;
+}
+.miniPhoto{
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.containerBooking{
+  display: flex;
+  flex-direction: row;
+}
+.containerKristin{
+  margin: 1rem;
+}
+.containerS4Text h3{
+  text-align: center;
+}
+.containerS4Text h5{
+  text-align: center;
+  line-height: 4.8rem;
+}
+.containerS4Stickers{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 480px) and (max-width: 770px){
+  .sticker {
+    width: 10rem;
+  }
+}
+/*SECTION 5_______OUR SERVICES_____________________________________*/
+
+
+.section5 {
+
+  width: 80%;
+  margin: 10rem auto 0rem auto;
+
+}
+.containerArtS5{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section5 article{
+  height: 38rem;
+  width: 34rem;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.7rem;
+}
+.section5Img{
+  height: 4rem;
+  width: 4rem;
+}
+.iconS5{
+  height: 4rem;
+  width: 4em;
+  padding: 1rem;
+  background-color: #ECF7FF;
+  border-radius: 50%;
+}
+.section5 h3{
+  margin-top: 0;
+  margin-bottom: 5rem;
+  color:#292E47;
+}
+
+@media (min-width: 480px) and (max-width: 770px){
+  
+  .containerArtS5{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .section5 article{
+    height: 26rem;
+    width: 100%;
+    gap: 1rem;
+    padding: 2.5rem 2rem 2rem;
+    align-items: center;
+  }
+  .section5 article p{
+    text-align: center;
+  }
+  .learnMore{
+    margin-top: 0rem;
+  }
+}
+/*SECTION 6_______SEC FONDO AMARILLO_______________________________________*/
+
+.section6{
+  height: 50rem;
+  width: 90%;
+  margin: 10rem auto 0rem auto;
+  padding: 10rem;
+  background-color: #FFC600;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.email{
+  padding: 1.7rem;
+  margin-right: 1.7rem;
+  border: 0rem;
+  width: 35%;
+}
+.section6 h3{
+  text-align: center;
+}
+.emailForm{
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 480px) and (max-width: 770px){
+  .section6 {
+    height: 35rem;
+    padding: 5.5rem;
+  }
+}
+
+/*FOOTER______________________________________________*/
+
+footer{
+  margin: 10rem auto 0rem auto;
+  padding-bottom: 3rem;
+  width: 80%;
+  height: 12.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer ul{
+  width: 50%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+}
+footer div{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer p{
+  line-height: 2.4rem;
+}
+.logoImg2{
+  height: 3rem;
+}
+@media (min-width: 480px) and (max-width: 770px){
+  html {
+    font-size: 9px;
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 770px){
+  footer .p02 {
+      font-size: 1.3rem;
+
+  }
+}
