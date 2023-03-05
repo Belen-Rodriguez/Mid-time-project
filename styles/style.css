@@ -10,6 +10,7 @@ html{
   margin: 0;
   padding: 0;
   font-family: roboto;
+  box-sizing: border-box;
 }
   /*COLORES _____________________________________________
   Azul oscuro: #072AC8
@@ -53,6 +54,7 @@ h5{
     font-size: 2rem;
     font-weight: 400;
     color: #6B708D;
+    line-height: 3.5rem;
 }
 .p02{
   /*Body Intro Text 17 Regular*/
@@ -109,7 +111,7 @@ h5{
 
 header{
   margin: 7rem auto 0rem auto;
-  height: 12.2rem;
+  height: auto;
   width: 80%;
  /*position: fixed;*/
   display: grid;
@@ -141,6 +143,14 @@ li a{
   text-decoration: none;
 }
 
+header li a:hover{
+  color: #072AC8;
+}
+.abrir-menu,
+.cerrar-menu{
+  display: none;
+}
+
 .blueBtn{
   padding: 1.7rem;
   background-color: #072AC8;
@@ -148,17 +158,78 @@ li a{
   text-align: center;
   text-decoration: none;
 }
+@media (max-width: 479px){
+  header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+   }
+  .blueBtn{
+    display: none;
+  }
 
+ .abrir-menu,
+ .cerrar-menu{
+    display: block;
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .abrir-menu{
+    color:#6B708D;
+  }
+
+  .cerrar-menu{
+    color:#6B708D;
+  }
+  .nav{
+    opacity:0;
+    visibility: hidden;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+  } 
+
+  .nav.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+  }
+  header li{
+    text-align: end;
+    padding-top: 2rem;
+    border-bottom: 1px dotted #6B708D;
+
+  }
+
+}
 /*SECTION 1___HERO__________________________________________*/
 
 .section1{
   margin: 10rem auto;
   width: 80%;
-  height: 65rem;
+  height: auto;
   display: grid;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: 47.5% 47.5%;
   align-items: center;
-  grid-column-gap: 10%;
+  grid-column-gap: 5%;
 }
 .card1{
   margin: 0;
@@ -172,9 +243,8 @@ li a{
   display: none;
 }
 .heroImg{
-  height: 100%;
-
-  z-index: 50;
+  width: 100%;
+  z-index: -99;
 }
 .containerHeroText{
   height: 100%;
@@ -225,12 +295,11 @@ li a{
 /*SECTION 3_____RECENT PROJECTS________________________________________*/
 
 .section3 {
-  height: 56.1rem;
   width: 80%;
   margin: 10rem auto 0rem auto;
-
 }
 .containerImgS3{
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -239,12 +308,13 @@ li a{
 
 .section3 article{
   height: 44.4rem;
-  width: 34rem;
+  width: 30%;
   background-color: white;
 }
 .section3Img{
   height: 24rem;
-  width: 34rem;
+  width: 100%;
+  object-fit: cover;
 }
 .section3 h3{
   margin-top: 0;
@@ -254,18 +324,53 @@ li a{
 .learnMore{
   color: #072AC8;
   text-decoration: none;
-  margin-top: 4rem;
+
 }
 .containerTextS3{
-  margin-top: 2.4rem;
-  margin-left: 2.4rem;
+
+  height: 20rem;  
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1.7rem;
-}
 
+}
+@media (min-width: 480px) and (max-width: 770px){
+  
+  .containerImgS3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .section3 article{
+    height: 24rem;
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+  .section3Img{
+    height: 100%;
+    width: 55%;
+    object-fit: cover;
+  }
+
+  .containerTextS3{
+    margin: 0;
+    padding: 2rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+}
 
 /*SECTION 4______TESTIMONIAL_______________________________________*/
 
@@ -277,7 +382,6 @@ li a{
   background-color: #292E47;
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  box-sizing: border-box;
 }
 .sticker{
   width: 15rem;
@@ -317,6 +421,9 @@ li a{
 }
 
 @media (min-width: 480px) and (max-width: 770px){
+  .section4{
+    padding: 3rem;
+  }
   .sticker {
     width: 10rem;
   }
@@ -325,10 +432,8 @@ li a{
 
 
 .section5 {
-
   width: 80%;
   margin: 10rem auto 0rem auto;
-
 }
 .containerArtS5{
   display: flex;
@@ -341,7 +446,6 @@ li a{
 .section5 article{
   height: 38rem;
   width: 34rem;
-  box-sizing: border-box;
   background-color: white;
   padding: 4rem 3rem 3rem;
   display: flex;
@@ -350,16 +454,19 @@ li a{
   align-items: flex-start;
   gap: 1.7rem;
 }
-.section5Img{
-  height: 4rem;
-  width: 4rem;
-}
 .iconS5{
-  height: 4rem;
-  width: 4em;
+  height: 5.5rem;
+  width: 5.5rem;
   padding: 1rem;
   background-color: #ECF7FF;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section5Img{
+  height: 4rem;
+  width: 4rem;
 }
 .section5 h3{
   margin-top: 0;
@@ -398,17 +505,20 @@ li a{
   margin: 10rem auto 0rem auto;
   padding: 10rem;
   background-color: #FFC600;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 .email{
+  background-image:url(/images/newsletter/icon/mail.svg);
+  background-repeat: no-repeat;
+  background-position: 1rem center;
   padding: 1.7rem;
   margin-right: 1.7rem;
   border: 0rem;
   width: 35%;
+  text-indent: 3rem;
 }
 .section6 h3{
   text-align: center;
@@ -421,6 +531,9 @@ li a{
   .section6 {
     height: 35rem;
     padding: 5.5rem;
+  }
+  .email{
+    font-size: 1.3rem;
   }
 }
 
@@ -440,6 +553,9 @@ footer ul{
   display: grid;
   grid-template-columns: 30% 30% 30%;
 }
+footer li a:hover{
+  color: #072AC8;
+}
 footer div{
   height: 100%;
   display: flex;
@@ -453,16 +569,21 @@ footer p{
 .logoImg2{
   height: 3rem;
 }
+
+@media (min-width: 480px) and (max-width: 770px){
+  footer .p02 {
+      font-size: 1.3rem;
+  }
+}
+
+/*ALL______________________________________________*/
 @media (min-width: 480px) and (max-width: 770px){
   html {
     font-size: 9px;
   }
 }
-
-
-@media (min-width: 480px) and (max-width: 770px){
-  footer .p02 {
-      font-size: 1.3rem;
-
+@media (max-width: 479px){
+  html {
+    font-size: 8px;
   }
 }
