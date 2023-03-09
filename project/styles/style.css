@@ -1,4 +1,6 @@
 
+/*___________________CSS PROJECT!__________________________*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 html{
@@ -12,6 +14,7 @@ html{
   font-family: roboto;
   box-sizing: border-box;
 }
+
   /*COLORES _____________________________________________
   Azul oscuro: #072AC8
   azul cian: #43D2FF
@@ -228,11 +231,76 @@ header li a:hover{
     text-align: end;
     padding-top: 2rem;
     border-bottom: 1px dotted #6B708D;
+  }
+}
+/*SECTION 1_____SIMPLIFY________________________________________*/
+.section1 {
+  width: 80%;
+  margin: 10rem auto 0rem auto;
+}
 
+.section1 h1{
+  margin-bottom: 2rem;
+}
+.containerImgS1{  
+  position: relative;
+}
+.container2ndText{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.simplyImg{
+  width: 100%;
+  margin: 6rem auto 6rem auto;
+  max-height: 44.4rem;
+  object-fit: cover;
+}
+.simplyImgFilter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 6rem auto 6rem auto;
+  max-height: 44.4rem;
+  object-fit: cover;
+  filter: blur(3rem);
+  z-index: -1;
+}
+.section1 p{
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 480px) and (max-width: 770px) {
+.container2ndText{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  text-align: center;
+}
+.section1 p{
+  text-align: justify;
+}
+}
+@media (max-width: 479px) {
+  .container2ndText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    text-align: center;
+  }
+  .section1 p{
+    text-align: justify;
   }
 }
 
-/*SECTION 3_____RECENT PROJECTS________________________________________*/
+/*SECTION 2_____OTHER PROJECTS________________________________________*/
 
 .section3 {
   width: 80%;
@@ -251,6 +319,7 @@ header li a:hover{
   height: 44.4rem;
   width: 30%;
   background-color: white;
+  box-shadow: 0rem 4rem 7rem rgba(0, 0, 0, 0.1);
 }
 
 .section3Img {
@@ -268,20 +337,21 @@ header li a:hover{
 .learnMore {
   color: #072AC8;
   text-decoration: none;
-
 }
 
 .containerTextS3 {
-
   height: 20rem;
   padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-
+  display: grid;
+  grid-template-rows: 20% 40% 20%;
+  align-items: start;
+  grid-row-gap: 10%;
 }
 
+.justify {
+  text-align: left;
+  text-justify: inter-word;
+}
 @media (min-width: 480px) and (max-width: 770px) {
 
   .containerImgS3 {
@@ -328,7 +398,7 @@ header li a:hover{
   .containerImgS3 {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .section3 article {
@@ -348,20 +418,88 @@ header li a:hover{
     height: 10rem;
     padding: 1rem;
     align-items: center;
-  }
-
-  .section3 p {
     text-align: center;
   }
 
 }
 
+/*SECTION 3_______SEC FONDO AMARILLO_______________________________________*/
 
+.section6 {
+  height: 50rem;
+  width: 90%;
+  margin: 10rem auto 0rem auto;
+  padding: 10rem;
+  background-color: #FFC600;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.email {
+  background-image: url(/images/newsletter/icon/mail.svg);
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  padding: 1.7rem;
+  margin-right: 1.7rem;
+  border: 0rem;
+  width: 35%;
+  text-indent: 3rem;
+}
+
+.section6 h3 {
+  text-align: center;
+}
+
+.emailForm {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 480px) and (max-width: 770px) {
+  .section6 {
+    height: 35rem;
+    padding: 5.5rem;
+  }
+
+  .email {
+    font-size: 1.3rem;
+  }
+
+}
+
+@media (max-width: 479px) {
+  .section6 {
+    height: auto;
+    padding: 6rem;
+    margin: 6rem auto;
+  }
+
+  .emailForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .email {
+    padding: 1rem;
+    margin-right: 1.7rem;
+    margin-bottom: 1.7rem;
+    margin-right: 0rem;
+    width: 90%;
+    text-indent: 5rem;
+  }
+
+  .section6 .blueBtn {
+    padding: 1rem
+  }
+}
 
 /*FOOTER______________________________________________*/
 
-footer{
+footer {
   margin: 10rem auto;
   padding-bottom: 3rem;
   width: 80%;
@@ -370,29 +508,31 @@ footer{
   flex-direction: row;
   justify-content: space-between;
 }
-footer ul{
-  width: 50%;
+
+footer ul {
+  width: 60%;
   display: grid;
   grid-template-columns: 30% 30% 30%;
 }
-footer li a:hover{
+
+footer li a:hover {
   color: #072AC8;
 }
-footer div{
+
+footer div {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
-footer p{
+
+footer p {
   line-height: 2.4rem;
 }
-.logoImg2{
+
+.logoImg2 {
   height: 3rem;
-}
-footer ul{
-  width: 100%;
 }
 
 @media (min-width: 480px) and (max-width: 770px){

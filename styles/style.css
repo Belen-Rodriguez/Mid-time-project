@@ -1,3 +1,5 @@
+/*___________________CSS HOME!__________________________*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 html {
@@ -400,6 +402,7 @@ header li a:hover {
   height: 44.4rem;
   width: 30%;
   background-color: white;
+  box-shadow: 0rem 4rem 7rem rgba(0, 0, 0, 0.1);
 }
 
 .section3Img {
@@ -421,14 +424,12 @@ header li a:hover {
 }
 
 .containerTextS3 {
-
   height: 20rem;
   padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-
+  display: grid;
+  grid-template-rows: 20% 40% 20%;
+  align-items: start;
+  grid-row-gap: 10%;
 }
 
 @media (min-width: 480px) and (max-width: 770px) {
@@ -477,7 +478,7 @@ header li a:hover {
   .containerImgS3 {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .section3 article {
@@ -497,9 +498,6 @@ header li a:hover {
     height: 10rem;
     padding: 1rem;
     align-items: center;
-  }
-
-  .section3 p {
     text-align: center;
   }
 
@@ -512,6 +510,10 @@ header li a:hover {
   width: 90%;
   margin: 10rem auto 0rem auto;
   padding: 5rem;
+  background-image: url(/images/testimonial-section/orbit.png);
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
   background-color: #292E47;
   display: grid;
   grid-template-columns: 20% 60% 20%;
@@ -590,7 +592,7 @@ header li a:hover {
 }
 
 /*SECTION 5_______OUR SERVICES_____________________________________*/
-
+  /*Revisar articulos para que Learn more no se desconfigure____*/
 
 .section5 {
   width: 80%;
@@ -745,8 +747,9 @@ header li a:hover {
 @media (max-width: 479px) {
   .section6 {
     height: auto;
-    padding: 3rem;
-    margin: 5rem auto;
+    padding: 6rem;
+    margin: 6rem auto;
+    }
   }
 
   .emailForm {
@@ -768,7 +771,7 @@ header li a:hover {
   .section6 .blueBtn {
     padding: 1rem
   }
-}
+
 
 
 /*FOOTER______________________________________________*/
@@ -784,7 +787,7 @@ footer {
 }
 
 footer ul {
-  width: 50%;
+  width: 60%;
   display: grid;
   grid-template-columns: 30% 30% 30%;
 }
@@ -807,10 +810,6 @@ footer p {
 
 .logoImg2 {
   height: 3rem;
-}
-
-footer ul {
-  width: 100%;
 }
 
 @media (min-width: 480px) and (max-width: 770px) {
@@ -849,7 +848,6 @@ footer ul {
     font-size: 9px;
   }
 }
-
 @media (max-width: 479px) {
   html {
     font-size: 8px;
