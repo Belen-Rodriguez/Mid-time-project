@@ -18,32 +18,60 @@
         <button id="cerrar" class="cerrar-menu"><i class="bi bi-x"></i></button>
         <ul class="nav-list p03">
           <li><a class="p03" href="/index.html">Home</a></li>
-          <li><a class="p03" href="/project/indexProject.html">Projects</a></li>
-          <li><a class="p03" href="#services">Services</a></li>
+          <li><a class="p03" href="#">Projects</a></li>
+          <li><a class="p03" href="/index.html#services">Services</a></li>
         </ul>
       </nav>
-      <a href="#" class="blueBtn p03">Contact Us</a>
+      <a href="/contact/indexContact.html" class="blueBtn p03">Contact Us</a>
   </header>
   <body>
 
-    <!-- FOOTER--> 
 
+<!-- SECCIÓN 1 CONTACT US -->
+
+<section class="section1">
+  <h1>Contact Us</h1>
+<form id="form-container" action="/some-url" method="post">
+  <label class="p01" for="name">Full Name*</label><br>
+  <input class="p02" type="text" id="name" name="name" placeholder="Enter your full name">
+
+  <div class="containerEP">
+    <div>
+    <label class="p01" for="email">Email</label><br>
+    <input class="p02" type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+    <div>
+    <label class="p01" for="phone">Phone</label>
+    <input class="p02" type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+    pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
+    </div>
+  </div>
+
+  <label class="p01" for="comment">Message</label><br>
+  <textarea class="p02" id="comment" rows="10" name="comments" placeholder="Write your message here"></textarea>
+
+  <button class="blueBtn" type="submit">Submit</button>
+</form>
+</section>
+
+<!-- FOOTER--> 
     <footer>
-        <div>
-          <img class="logoImg2" src="/images/logos/circle.svg" alt="circleLogo" />
-          <p class="p02">2972 Westheimer Rd. Santa Ana, <br>
-            Illinois 85486
-          </p>
-        </div> 
-        <ul class="p02">
-          <li><a class="p02" href="#">Team</a></li>
-          <li><a class="p02" href="#">Services</a></li>
-          <li><a class="p02" href="#">About Us</a></li>
-          <li><a class="p02" href="#">Press</a></li>
-          <li><a class="p02" href="#">Projects</a></li>
-          <li><a class="p02" href="#">Privacy Policy</a></li>
-        </ul>
-      </footer>
-    <script src="./javascript/index.js"></script>
-    </body>
+      <div>
+        <img class="logoImg2" src="/images/logos/circle.svg" alt="circleLogo" />
+        <p class="p02">2972 Westheimer Rd. Santa Ana, <br>
+          Illinois 85486
+        </p>
+      </div> 
+      <ul class="p02">
+        <li><a class="p02" href="#">Team</a></li>
+        <li><a class="p02" href="#">Services</a></li>
+        <li><a class="p02" href="#">About Us</a></li>
+        <li><a class="p02" href="#">Press</a></li>
+        <li><a class="p02" href="#">Projects</a></li>
+        <li><a class="p02" href="#">Privacy Policy</a></li>
+      </ul>
+    </footer>
+  <script src="./javascript/index.js"></script>
+  </footer>
+  </body>
 </html>
