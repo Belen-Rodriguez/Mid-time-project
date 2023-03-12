@@ -1,0 +1,43 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "User1"
+    },
+    {
+      "name": "Maria Rod Vaz",
+      "email": "maria@gmail.com",
+      "phone": "999888000",
+      "comment": "esto es una prueba json1",
+      "id": 2
+    },
+    {
+      "name": "Sergi Perez Muñoz",
+      "email": "sergiperezmunoz@gmail.com",
+      "phone": "661856923",
+      "comment": "Te quiero mucho churri guapa guapisima",
+      "id": 3
+    },
+    {
+      "name": "Belen Rod Vaz",
+      "email": "belen@gmail.com",
+      "phone": "666777888",
+      "comment": "Esto es otra prueba",
+      "id": 4
+    },
+    {
+      "name": "Matias",
+      "email": "matias@gmail.com",
+      "phone": "444555666",
+      "comment": "prueba con clase",
+      "id": 5
+    }
+  ],
+  "projects": [
+    {
+      "id": 4,
+      "name": "UX/UI",
+      "type": "Part Time"
+    }
+  ]
+}
