@@ -17,10 +17,46 @@ cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
 
-/*JSON SEND CONTACTS------------------------*/
+/*VALIDATE EMAIL------------------------*/
 
-/*Falta hacer validacion
-hacer clase que se llame contact con su constructor y metodos*/
+function validateEmail(){
+                
+    // Get our input reference.
+    const emailField = document.getElementById('email');
+    
+    // Define our regular expression.
+    const validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+    // Using test we can check if the text match the pattern
+    if(validEmail.test(emailField.value)) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/*VALIDATE TELEFON------------------------*/
+
+function validatePhone(){
+                
+    // Get our input reference.
+    const phoneField = document.getElementById('phone');
+    
+    // Define our regular expression.
+    const validPhone =  /^([0-9]{9})$/;
+
+    // Using test we can check if the text match the pattern
+    if(validPhone.test(phoneField.value)) {
+        console.log('trueeee')
+        return true;
+    }else{
+        console.log('false')
+        return false;
+    }
+}
+
+validatePhone()
+/*JSON SEND CONTACTS------------------------*/
 
 /*Clase para funcion 1 (no es necesario hacerla, se hace para practicar, se puede construir el objeto directamente en la funcion 1)*/
 
@@ -45,7 +81,9 @@ function _handleSubmitButton(){
     const newContact = new contact(name,email,phone,comment);
 
     console.log(newContact);
-    _saveContactData(newContact);
+    if (validateEmail()){
+    _saveContactData(newContact)}
+    else {alert('Email is invalid, skip form submission')}
 }
 
 /*Funcion 3 que envía los datos recogidos por la funcion 1 al servidor*/
@@ -61,6 +99,8 @@ function _saveContactData(contact){
 })
    .then(response => response.json())
    .then(response => console.log(JSON.stringify(response)))
+   .then(alert('Thank you for contact us!'))
+   .catch(err => console.error(err));
 }
 
 /*Funcion 2 activa la funcion que recoge los datos del usuario al hacer click el Submit*/
