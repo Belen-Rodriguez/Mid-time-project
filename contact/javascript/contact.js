@@ -35,7 +35,27 @@ function validateEmail(){
     }
 }
 
+/*VALIDATE TELEFON------------------------*/
 
+function validatePhone(){
+                
+    // Get our input reference.
+    const phoneField = document.getElementById('phone');
+    
+    // Define our regular expression.
+    const validPhone =  /^([0-9]{9})$/;
+
+    // Using test we can check if the text match the pattern
+    if(validPhone.test(phoneField.value)) {
+        console.log('trueeee')
+        return true;
+    }else{
+        console.log('false')
+        return false;
+    }
+}
+
+validatePhone()
 /*JSON SEND CONTACTS------------------------*/
 
 /*Clase para funcion 1 (no es necesario hacerla, se hace para practicar, se puede construir el objeto directamente en la funcion 1)*/
