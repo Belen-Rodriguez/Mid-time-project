@@ -47,15 +47,12 @@ function validatePhone(){
 
     // Using test we can check if the text match the pattern
     if(validPhone.test(phoneField.value)) {
-        console.log('trueeee')
         return true;
     }else{
-        console.log('false')
         return false;
     }
 }
 
-validatePhone()
 /*JSON SEND CONTACTS------------------------*/
 
 /*Clase para funcion 1 (no es necesario hacerla, se hace para practicar, se puede construir el objeto directamente en la funcion 1)*/
@@ -81,9 +78,11 @@ function _handleSubmitButton(){
     const newContact = new contact(name,email,phone,comment);
 
     console.log(newContact);
-    if (validateEmail()){
+    if (validateEmail() && validatePhone()){
     _saveContactData(newContact)}
-    else {alert('Email is invalid, skip form submission')}
+    else if (validateEmail() === false && validatePhone()){alert('Email is invalid, please enter a valid email')}
+    else if (validatePhone() === false && validateEmail()){alert('Phone is invalid, please enter a valid phone')}
+    else {alert('Email and phone are invalid, please enter a valid phone a email')}
 }
 
 /*Funcion 3 que envía los datos recogidos por la funcion 1 al servidor*/
