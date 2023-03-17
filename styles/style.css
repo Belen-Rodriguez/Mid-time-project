@@ -151,7 +151,6 @@ header {
   margin: 7rem auto 0rem auto;
   height: auto;
   width: 80%;
-  /*position: fixed;*/
   display: grid;
   grid-template-columns: 8% 40% 20%;
   align-items: center;
@@ -324,7 +323,6 @@ header li a:hover {
 
 @media (min-width: 480px) and (max-width: 770px) {
 
-  /*Revisar boton transparente____*/
   .transparentBtn {
     margin-left: 0;
     padding: 1rem;
@@ -592,7 +590,6 @@ header li a:hover {
 }
 
 /*SECTION 5_______OUR SERVICES_____________________________________*/
-  /*Revisar articulos para que Learn more no se desconfigure____*/
 
 .section5 {
   width: 80%;
