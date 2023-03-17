@@ -1,19 +1,16 @@
 
-
-
-    /*Sever PROJECTS 4 5 and 6*/
-    const SERVER_URL_PROJECTSDOS = 'http://localhost:8000/projects';
-
-    /*Sever PROJECTS 1 2 and 3*/
+/*SERVER PROJECTS 1 2 3 (API FROM IRONHACK)*/
 
 const SERVER_URL_PROJECTS = 'https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects';
+
+/*Sever PROJECTS 4 5 6 (MY JSON API)*/
+const SERVER_URL_PROJECTSDOS = 'http://localhost:8000/projects';
 
 window.onload = () => {
     console.log('0NLOAD');
 
 
     /*BUTTON HAMBURGER---------------------------*/
-
 
     const nav = document.querySelector("#nav");
     const abrir = document.querySelector("#abrir");
@@ -22,7 +19,7 @@ window.onload = () => {
     const ul = document.querySelector("nav ul")
     const liContact = document.createElement("li");
     liContact.innerHTML = "<a id='contactBt' class='p03 removeBtnContact'  href='/contact/indexContact.html'>Contact Us</a>"
-    
+
     abrir.addEventListener("click", () => {
         nav.classList.add("visible");
         ul.appendChild(liContact);
@@ -31,16 +28,17 @@ window.onload = () => {
         nav.classList.remove("visible");
         ul.removeChild(liContact)
     })
-    
 
-    /*PROJETS 1, 2 y 3---------------------------*/
 
-    /*SELECTORES---------------------------*/
+    /*SELECTORS---------------------------*/
 
     const h1 = document.querySelector('h1').innerHTML
-    const h3 = document.querySelector('h3') 
 
-    /*Funcion 1 para obtener el nombre del proyecto de la URL---------------------------*/
+
+
+    /*API---------------------------*/
+
+    /*Funcion 1 obtener el nombre del proyecto de la URL---------------------------*/
 
     function _getUrlName() {
         const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -50,30 +48,21 @@ window.onload = () => {
         return params.name;
     }
 
+    /*Funcion 2 obtener información de la API y filtrarla para tener el objeto que corresponde con el numbre de la URL---------------------------*/
 
-
-    /*Funcion 2 con PROMISE 1 obtener objeto que quiero según el nombre que sale en la URL---------------------------*/
-
-    /*function fetchProjectsData(url) {
-        return new Promise((resolve, reject) => {
-            fetch(url)
-                .then(response => response.json())
-                .then(projects => {
-                    console.log(`${projects} hey there`)
-
-                    const [projectToShow] = projects.filter(project => project.name.toLowerCase() === _getUrlName())
-                    resolve(projectToShow)
-                })
-                .catch(err => reject(err))
-        })
-    }*/
+    /*Se realiza una funcion asincrona para que se ejecute la llamada una vez que se tengan todos los datos de la API. Dado que la función llama a dos APIS diferentes se gestiona de la siguiente forma:
+    La función llama al servidor1 (el que se le pasa por parametro para ejecutarla) 
+    Si ha encontrado el objeto (porque el nombre esta en la API que ha llamado) se ejecuta la función 'distributeInfo'
+    Si no lo ha encontrado sigue con el siguiente paso porque (exist = false) y no retorna nada,
+    El siguiente paso es ejecutar la función con el server2 Si encuentra el nombre ejecuta la función 'distributeInfo'
+    Si no lo encuentra corta la ejecución (exit = true)*/
 
     async function fetchProjectsData(url, exit = false) {
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
         const [projectToShow] = data.filter(object => object.name.toLowerCase() === _getUrlName())
-        console.log (projectToShow)
+        console.log(projectToShow)
 
         if (projectToShow) {
             distributeInfo(projectToShow)
@@ -87,12 +76,9 @@ window.onload = () => {
         fetchProjectsData(SERVER_URL_PROJECTSDOS, true)
     }
 
+    /*Funcion 3 se distribuye la información---------------------------*/
 
-    //const objetoProjectos123 = fetchProjectsData(SERVER_URL_PROJECTS);
-   // console.log(objetoProjectos123)
-
-
-    function distributeInfo(objeto){
+    function distributeInfo(objeto) {
         const { name, description, content, image, completed_on } = objeto;
 
         document.querySelector('h1').innerHTML = name;
@@ -104,59 +90,8 @@ window.onload = () => {
 
     }
 
+    /*Llamada a la función con el server1---------------------------*/
+
     fetchProjectsData(SERVER_URL_PROJECTS);
 
-    
-   // distributeInfo(objetoProjectosDos)
-   // distributeInfo(objetoProjectos456)
-
-
-    /*Gestion de la PROMISE 2 enlazar cada parte del objeto con el DOM---------------------------*/
-
-
-    /*fetchProjectsData(SERVER_URL_PROJECTS)
-        .then(project => {
-            console.log(project)
-            const { name, description, content, image, completed_on } = project;
-
-        document.querySelector('h1').innerHTML = name;
-        document.querySelector('#description').innerHTML = description;
-        document.querySelector('#completeDate').innerHTML = completed_on;
-        document.querySelector('#content').innerHTML = content;
-        document.querySelector('.simplyImg').src = (image);
-        document.querySelector('.simplyImgFilter').src = (image);
-
-        })
-        .catch(err => {
-            console.error(err)
-        })*/
-
-
-
-    /*PROJETS 4, 5 y 6---------------------------*/
-
- /*Funcion 1 para obtener el nombre del proyecto de la URL---------------------------*/
-
-
-
-/*Gestion de la PROMISE 2 enlazar cada parte del objeto con el DOM---------------------------*/
-
-
-/*fetchProjectsData(SERVER_URL_PROJECTS2)
-    .then(project => {
-        console.log(project)
-        const { name, description, content, image, completed_on } = project;
-
-        document.querySelector('h1').innerHTML = name;
-        document.querySelector('#description').innerHTML = description;
-        document.querySelector('#completeDate').innerHTML = completed_on;
-        document.querySelector('#content').innerHTML = content;
-        document.querySelector('.simplyImg').src = (image);
-        document.querySelector('.simplyImgFilter').src = (image);
-
-    })
-    .catch(err => {
-        console.error(err)
-    })*/
-        
 }
